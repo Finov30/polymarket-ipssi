@@ -1,0 +1,865 @@
+{
+  "metadata": {
+    "started_at": "2026-01-14T13:45:51.301642",
+    "last_updated": "2026-01-14T14:23:03.295668",
+    "total_events": 50
+  },
+  "orderbooks": {},
+  "price_changes": [],
+  "trades": [],
+  "new_markets": [
+    {
+      "id": "1174649",
+      "question": "Nothing Ever Happens: Crypto Edition",
+      "market": "0xeb81910b6b02ddbcebbcefe089735ef3284d9cf1a1cf1bd00c66727f0abef25b",
+      "slug": "nothing-ever-happens-crypto-edition-319",
+      "description": "This market will resolve to “No” if any of the following conditions are met between market creation and March 31, 2026, 11:59 PM ET:\n\n- Bitcoin hits an all-time high\n- Ethereum hits an all-time high\n- Solana hits an all-time high\n- US national Bitcoin reserve\n\nOtherwise, this market will resolve to “Yes”.\n\nThe full rules for this market can be found here:\nhttps://polymarket-upload.s3.us-east-2.amazonaws.com/NEH_Crypto.pdf",
+      "assets_ids": [
+        "81180020013017827476842526432179382825568528361894177716518392739370736604350",
+        "14876931057371254387371372079409205180893043258774905043634892269907159583295"
+      ],
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "timestamp": "1768394909829",
+      "received_at": "2026-01-14T13:48:29.770386"
+    },
+    {
+      "id": "1182334",
+      "question": "Map Handicap:  CSDIILIT (-1.5)",
+      "market": "0x8115958c379e3a44c0455ad5cc0b8c79056ebe7cac38730f5b8cdd54870823d8",
+      "slug": "cs2-csdiil-msc-2026-01-14-map-handicap-away-1pt5",
+      "description": "This market refers to the Counter-Strike match between  CSDIILIT and MASONIC in the NODWIN Clutch Series Play-In Group A, scheduled for January 14 at 7:00AM ET.\n\nThis market will resolve to \" CSDIILIT\" if  CSDIILIT wins 2 or more maps than MASONIC in this match.\n\nOtherwise, this market will resolve to \"MASONIC\".\n\nIf the match is canceled (not played at all), ends in a tie, or is delayed beyond 7 days from the scheduled date without a winner determined, this market will resolve to 50-50. \n\nIf the match begins but is not completed, and one team wins due to the opponent's forfeiture, disqualification, or walkover, this market will resolve to 50-50. \n\nIf the match ends in a forfeit, disqualification, or walkover (team withdraws before the start and the other wins automatically), this market will resolve to 50-50.",
+      "assets_ids": [
+        "97217869584326869969791851105288806291962090746943549606705771982380816460048",
+        "76040879475489774228897315631476728155680746147115774805717809482455645704701"
+      ],
+      "outcomes": [
+        " CSDIILIT",
+        "MASONIC"
+      ],
+      "timestamp": "1768395070618",
+      "received_at": "2026-01-14T13:51:10.573568"
+    },
+    {
+      "id": "1182335",
+      "question": "Solana Up or Down - January 15, 7:45AM-8:00AM ET",
+      "market": "0xe8b119419367f09fdddce7a8466b37c5bfa3292c705e338ff723d7ca07e4c213",
+      "slug": "sol-updown-15m-1768481100",
+      "description": "This market will resolve to \"Up\" if the Solana price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the SOL/USD data stream available at https://data.chain.link/streams/sol-usd.\nPlease note that this market is about the price according to Chainlink data stream SOL/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "37785301572247587220779482716357236410812278853442911519732458968374602298304",
+        "92316255776217823898495989068947842154014030077468760041935904714467701629421"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395155058",
+      "received_at": "2026-01-14T13:52:34.998777"
+    },
+    {
+      "id": "1182338",
+      "question": "Bitcoin Up or Down - January 15, 7:45AM-8:00AM ET",
+      "market": "0xe805b18ca592bc6229a9d2894df4fa3768037dab286c26db6c1077636e1d59fb",
+      "slug": "btc-updown-15m-1768481100",
+      "description": "This market will resolve to \"Up\" if the Bitcoin price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the BTC/USD data stream available at https://data.chain.link/streams/btc-usd.\nPlease note that this market is about the price according to Chainlink data stream BTC/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "66938508964563139577605163273201023244649522066648958188381753517022156697507",
+        "52873433261982413683358305725014116576438544613439946347479238969956691722275"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395155313",
+      "received_at": "2026-01-14T13:52:35.264357"
+    },
+    {
+      "id": "1182339",
+      "question": "Ethereum Up or Down - January 15, 7:45AM-8:00AM ET",
+      "market": "0x09a6f94a23fd69819f3b2d62761161f00c5124b09021fbe816ebc263dd6e7ab2",
+      "slug": "eth-updown-15m-1768481100",
+      "description": "This market will resolve to \"Up\" if the Ethereum price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the ETH/USD data stream available at https://data.chain.link/streams/eth-usd.\nPlease note that this market is about the price according to Chainlink data stream ETH/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "15178410413578363627104270124358292245505209059942251885976543047278965652737",
+        "73818814401526644764419376674962764081456347771406141847940005219921079009016"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395157085",
+      "received_at": "2026-01-14T13:52:37.023660"
+    },
+    {
+      "id": "1182342",
+      "question": "XRP Up or Down - January 15, 7:45AM-8:00AM ET",
+      "market": "0xbdb337c01a91cd85e7a35782765bbe246de4c11230a7f609023606d48ea0fd17",
+      "slug": "xrp-updown-15m-1768481100",
+      "description": "This market will resolve to \"Up\" if the XRP price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the XRP/USD data stream available at https://data.chain.link/streams/xrp-usd.\nPlease note that this market is about the price according to Chainlink data stream XRP/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "73914864246356279414255415199371617722585830049320680233734193402948426109988",
+        "58178073143229528099384959845262031215068353066900495097779504457996392738479"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395159063",
+      "received_at": "2026-01-14T13:52:38.998207"
+    },
+    {
+      "id": "1182349",
+      "question": "Apple (AAPL) Up or Down on January 15?",
+      "market": "0x3f3a6cd22a98e3e44e91e542f59209bc2598b32e2f7152d505789a3f6c7dd4fc",
+      "slug": "aapl-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NASDAQ closing price for Apple (AAPL) on Thursday, January 15, 2026 is higher than the official NASDAQ closing price for AAPL on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NASDAQ closing price for Apple (AAPL) on Thursday, January 15, 2026 is lower than the official NASDAQ closing price for AAPL on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf AAPL does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NASDAQ for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is NASDAQ, specifically the exchange-certified Close values published at https://www.nasdaq.com/market-activity/quotes/historical.",
+      "assets_ids": [
+        "90332784233654513416108289906128109564502949263168022496739691768638883968663",
+        "88615693554785560795813396328620847429961433345330855043649938982194867246208"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395671159",
+      "received_at": "2026-01-14T14:01:11.092509"
+    },
+    {
+      "id": "1182347",
+      "question": "Bitcoin ETF Flows on January 16?",
+      "market": "0xcb599a2a081ba70bd155b225d730a4bc780c53984f6f3d8712dbe35dd8780e7e",
+      "slug": "bitcoin-etf-flows-on-january-16",
+      "description": "This market will resolve to \"Positive\" if total Bitcoin ETF flows on Friday, January 16, 2026 are greater than 0, and to \"Negative\" if they are less than 0.\n\nIf flows are exactly 0, the market will resolve to 50-50.\n\nThe resolution source is Farside Investors, specifically the ETF Flow tab available at https://farside.co.uk/btc/ in the \"Total\" column for the date specified in the title.\n\nThe total flows will be considered finalized for that day once flows for all ETF providers have been published. If data for any ETF provider remains unpublished by 12 PM ET, 2 days after the date specified in the title, the market will resolve based on all available data published up to that time.\n\nIf the resolution source becomes permanently unavailable or fails to publish any data by 12 PM ET, 2 days after the specified date, the market will resolve 50-50.",
+      "assets_ids": [
+        "64683683883216684883291101922857146641743573380822214478935760173144668003458",
+        "45027474643540595372900287214119294588291018986414536710805786912599572172644"
+      ],
+      "outcomes": [
+        "Positive",
+        "Negative"
+      ],
+      "timestamp": "1768395671413",
+      "received_at": "2026-01-14T14:01:11.347860"
+    },
+    {
+      "id": "1182357",
+      "question": "Solana Up or Down - January 16, 8AM ET",
+      "market": "0x33800e6669641a084cb87d69c04f1373e7378c6d71d3c20b537b715b3a63a083",
+      "slug": "solana-up-or-down-january-16-8am-et",
+      "description": "This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the SOL/USDT 1 hour candle that begins on the time and date specified in the title. Otherwise, this market will resolve to \"Down\".\n\nThe resolution source for this market is information from Binance, specifically the SOL/USDT pair (https://www.binance.com/en/trade/SOL_USDT). The close « C » and open « O » displayed at the top of the graph for the relevant \"1H\" candle will be used once the data for that candle is finalized.\n\nPlease note that this market is about the price according to Binance SOL/USDT, not according to other sources or spot markets.",
+      "assets_ids": [
+        "13673551169025496910717113569744093510136649878303311679329988985749853951742",
+        "18748969358363308235872839279271072118041445906568969698134321404486001120039"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395671670",
+      "received_at": "2026-01-14T14:01:11.605048"
+    },
+    {
+      "id": "1182348",
+      "question": "S&P 500 (SPX) Up or Down on January 15?",
+      "market": "0x61a248ea7ebd44f69e737ca00d3aa644a0aeec263873ac76f7344dedaec3e79a",
+      "slug": "spx-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Thursday, January 15, 2026 is higher than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Thursday, January 15, 2026 is lower than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf SPX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by S&P 500 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+      "assets_ids": [
+        "39404014695768448054952585285179180166115033260455930494620842011142297530819",
+        "21176806160783458729347054895244797618314007188365057217871973395327382648124"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395673109",
+      "received_at": "2026-01-14T14:01:13.057347"
+    },
+    {
+      "id": "1182350",
+      "question": "Bitcoin Up or Down - January 16, 8AM ET",
+      "market": "0xe440dbc4cb5dd30a0f19df38b5a4c176bc132422bdf508a1fccc8b6c91b4a538",
+      "slug": "bitcoin-up-or-down-january-16-8am-et",
+      "description": "This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the BTC/USDT 1 hour candle that begins on the time and date specified in the title. Otherwise, this market will resolve to \"Down\".\n\nThe resolution source for this market is information from Binance, specifically the BTC/USDT pair (https://www.binance.com/en/trade/BTC_USDT). The close « C » and open « O » displayed at the top of the graph for the relevant \"1H\" candle will be used once the data for that candle is finalized.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.",
+      "assets_ids": [
+        "216658417020147693971694857627695048636954395356853801264338460036811926412",
+        "20605982829753211742761304273607233761313468694261497218143384868378927161258"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395673365",
+      "received_at": "2026-01-14T14:01:13.299957"
+    },
+    {
+      "id": "1182351",
+      "question": "Gold (GC) Up or Down on January 15?",
+      "market": "0x96c67a1357bc1649a946e6e35aabfdd8ff63550e215ad6ece7538ea3b416568f",
+      "slug": "gc-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if, on Thursday, January 15, 2026, the official CME settlement price for the Active Month (front month) of Gold (GC) futures is higher than the previous trading day's official settlement price for the same Active Month contract.\n\nThis market will resolve to \"Down\" if, on Thursday, January 15, 2026, the official CME settlement price for the Active Month (front month) of Gold (GC) futures is lower than the previous trading day's official settlement price for the same Active Month contract.\n\nFor CME Gold (GC) futures contracts, the Active Month is the nearest of CME's designated delivery-cycle months (February, April, June, August, December) that is not the spot month. The Active Month changes automatically on the contract's First Position Date, at which point the next eligible contract month becomes the Active Month.\n\nOnly the Active Month's official settlement price published by CME Group will be considered. Intraday trades, highs, lows, bids, offers, midpoint values, or indicative prices do not count.\n\nNote that the settlement price may differ from the last traded price. CME's methodology to determine the settlement price can vary by commodity and contract.\n\nThis market will resolve based on the settlement price as it appears on the CME settlement page at the time it is first published for that trading day, regardless of any later corrections or updates. If CME does not publish the settlement price for the listed trading day by 11:59 PM ET of the next trading day, this market will resolve to 50-50.\n\nIf the Active Month changes between the previous trading day and Thursday, January 15, 2026, the market will continue using the same contract month used on the previous trading day for the purposes of determining whether the settlement price moved up or down.\n\nThe resolution source for this market is the CME Group website — specifically, the daily \"Settlement\" price for the Active Month of Gold (GC) futures.",
+      "assets_ids": [
+        "75133749426701102758395715846994861075145112030716052857829401988838476050074",
+        "29486245705824797061053248633243303506253589960223301287114195189051465273763"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395673621",
+      "received_at": "2026-01-14T14:01:13.554304"
+    },
+    {
+      "id": "1182360",
+      "question": "Amazon (AMZN) Up or Down on January 15?",
+      "market": "0x146e40d12cdcbc6ec533b71d6764f0f7ecfba47cb69e0247b8445aa7807b2067",
+      "slug": "amzn-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NASDAQ closing price for Amazon.com, Inc. (AMZN) on Thursday, January 15, 2026 is higher than the official NASDAQ closing price for AMZN on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NASDAQ closing price for Amazon.com, Inc. (AMZN) on Thursday, January 15, 2026 is lower than the official NASDAQ closing price for AMZN on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf AMZN does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NASDAQ for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is NASDAQ, specifically the exchange-certified Close values published at https://www.nasdaq.com/market-activity/quotes/historical.",
+      "assets_ids": [
+        "15992876290744260981544771549516961390809341846521622640961898228152527699657",
+        "76412254657541443788861914466301680031683091468225269703903233055459772854946"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395673877",
+      "received_at": "2026-01-14T14:01:13.810408"
+    },
+    {
+      "id": "1182358",
+      "question": "Nasdaq 100 (NDX) Up or Down on January 15?",
+      "market": "0x90659ff844255725d83346e2f91f865b35d0dcfac33b7f4f27fcf935e727c783",
+      "slug": "ndx-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official Nasdaq 100 Index closing price for Nasdaq 100 (NDX) on Thursday, January 15, 2026 is higher than the official Nasdaq 100 Index closing price for NDX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official Nasdaq 100 Index closing price for Nasdaq 100 (NDX) on Thursday, January 15, 2026 is lower than the official Nasdaq 100 Index closing price for NDX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf NDX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by Nasdaq 100 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+      "assets_ids": [
+        "79939534185267605222669117369750770590013839474082826539105539076145272502298",
+        "89372519933253214721058689280965039185941856832196340660798800564041687882059"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395675152",
+      "received_at": "2026-01-14T14:01:15.091469"
+    },
+    {
+      "id": "1182355",
+      "question": "Nikkei 225 (NIK) Up or Down on January 15?",
+      "market": "0xbfaab8199336a0ca54fb5fc88cc3427e296031aac49e5005b07f48c0bd1d8458",
+      "slug": "nik-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official Nikkei 225 Index closing price for Nikkei 225 (NIK) on Thursday, January 15, 2026 is higher than the official Nikkei 225 Index closing price for NIK on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official Nikkei 225 Index closing price for Nikkei 225 (NIK) on Thursday, January 15, 2026 is lower than the official Nikkei 225 Index closing price for NIK on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf NIK does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by Nikkei 225 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+      "assets_ids": [
+        "101735903671883197007390128629928250089715821417281574172920288277561193209060",
+        "87163660944404892728875306038995504460103129467174173858876628373565083606502"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395675407",
+      "received_at": "2026-01-14T14:01:15.340717"
+    },
+    {
+      "id": "1182354",
+      "question": "Ethereum Up or Down - January 16, 8AM ET",
+      "market": "0xe59ed3cfbe68d4af4aabb6d0481b5482bf72af13a5462073ceea0edf44d2e74d",
+      "slug": "ethereum-up-or-down-january-16-8am-et",
+      "description": "This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the ETH/USDT 1 hour candle that begins on the time and date specified in the title. Otherwise, this market will resolve to \"Down\".\n\nThe resolution source for this market is information from Binance, specifically the ETH/USDT pair (https://www.binance.com/en/trade/ETH_USDT). The close « C » and open « O » displayed at the top of the graph for the relevant \"1H\" candle will be used once the data for that candle is finalized.\n\nPlease note that this market is about the price according to Binance ETH/USDT, not according to other sources or spot markets.",
+      "assets_ids": [
+        "71257557590227921092562897148649659448060660990882137046036330564510353719444",
+        "28526752835737112559285845263148912728153038478177537148397806175704962600416"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395675671",
+      "received_at": "2026-01-14T14:01:15.604515"
+    },
+    {
+      "id": "1182356",
+      "question": "Microsoft (MSFT) Up or Down on January 15?",
+      "market": "0x6a43f6af5a96e2d0f1f3ef8f29abf9bb3e6007123599b70a8fc0f2744fa7ae32",
+      "slug": "msft-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NASDAQ closing price for Microsoft Corporation (MSFT) on Thursday, January 15, 2026 is higher than the official NASDAQ closing price for MSFT on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NASDAQ closing price for Microsoft Corporation (MSFT) on Thursday, January 15, 2026 is lower than the official NASDAQ closing price for MSFT on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf MSFT does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NASDAQ for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is NASDAQ, specifically the exchange-certified Close values published at https://www.nasdaq.com/market-activity/quotes/historical.",
+      "assets_ids": [
+        "37431857231393326354218167186483776483026245653815049287655608372533111365373",
+        "20231923357210175057059271985292479494045900741694152658453355556689252172476"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395677122",
+      "received_at": "2026-01-14T14:01:17.055857"
+    },
+    {
+      "id": "1182352",
+      "question": "Ethereum ETF Flows on January 16?",
+      "market": "0x9fc9db5eebdabd93f86001743bc4a2a4015d2a56d9bd453be0ffcc81d0bf2fbf",
+      "slug": "ethereum-etf-flows-on-january-16",
+      "description": "This market will resolve to \"Positive\" if total Ethereum ETF flows on Friday, January 16, 2026 are greater than 0, and to \"Negative\" if they are less than 0.\n\nIf flows are exactly 0, the market will resolve to 50-50.\n\nThe resolution source is Farside Investors, specifically the ETF Flow tab available at https://farside.co.uk/eth/ in the \"Total\" column for the date specified in the title.\n\nThe total flows will be considered finalized for that day once flows for all ETF providers have been published. If data for any ETF provider remains unpublished by 12 PM ET, 2 days after the date specified in the title, the market will resolve based on all available data published up to that time.\n\nIf the resolution source becomes permanently unavailable or fails to publish any data by 12 PM ET, 2 days after the specified date, the market will resolve 50-50.",
+      "assets_ids": [
+        "56244247417140151636178874300302533250904195385639780195964063013236724721997",
+        "4085273155309611312807367396159250570136234281363158055757821152132207712339"
+      ],
+      "outcomes": [
+        "Positive",
+        "Negative"
+      ],
+      "timestamp": "1768395677380",
+      "received_at": "2026-01-14T14:01:17.316174"
+    },
+    {
+      "id": "1182353",
+      "question": "Silver (SI) Up or Down on January 15?",
+      "market": "0xdba13eae8890397a2db64c785fcebcc494bc81fdf028804fe402eab5c9b8e031",
+      "slug": "si-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if, on Thursday, January 15, 2026, the official CME settlement price for the Active Month (front month) of Silver (SI) futures is higher than the previous trading day's official settlement price for the same Active Month contract.\n\nThis market will resolve to \"Down\" if, on Thursday, January 15, 2026, the official CME settlement price for the Active Month (front month) of Silver (SI) futures is lower than the previous trading day's official settlement price for the same Active Month contract.\n\nFor CME Silver (SI) futures contracts, the Active Month is the nearest of CME's designated delivery-cycle months (March, May, July, September, December) that is not the spot month. The Active Month becomes a non-active month effective on its First Position Date, at which point the next eligible contract month becomes the Active Month.\n\nOnly the Active Month's official settlement price published by CME Group will be considered. Intraday trades, highs, lows, bids, offers, midpoint values, or indicative prices do not count.\n\nNote that the settlement price may differ from the last traded price. CME's methodology to determine the settlement price can vary by commodity and contract.\n\nThis market will resolve based on the settlement price as it appears on the CME settlement page at the time it is first published for that trading day, regardless of any later corrections or updates. If CME does not publish the settlement price for the listed trading day by 11:59 PM ET of the next trading day, this market will resolve to 50-50.\n\nIf the Active Month changes between the previous trading day and Thursday, January 15, 2026, the market will continue using the same contract month used on the previous trading day for the purposes of determining whether the settlement price moved up or down.\n\nThe resolution source for this market is the CME Group website — specifically, the daily \"Settlement\" price for the Active Month of Silver (SI) futures.",
+      "assets_ids": [
+        "21383543594008623870455449188330512252380244172914044523982468357329235610032",
+        "81572713780722583843495724993073291023037218931297013308172319002563599143053"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395677637",
+      "received_at": "2026-01-14T14:01:17.573309"
+    },
+    {
+      "id": "1182366",
+      "question": "DAX (DAX) Up or Down on January 15?",
+      "market": "0x6f3f459fd2dbb65342f27de9c602fa505607374180de1f711265c5ac0b941669",
+      "slug": "dax-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official DAX Index closing price for DAX (DAX) on Thursday, January 15, 2026 is higher than the official DAX Index closing price for DAX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official DAX Index closing price for DAX (DAX) on Thursday, January 15, 2026 is lower than the official DAX Index closing price for DAX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf DAX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by DAX Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+      "assets_ids": [
+        "20345867649198276802832437974487280014336374584352102595840962617303897803182",
+        "23351261421522158162358668484603272905208379026390672195612591567112979695857"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395678117",
+      "received_at": "2026-01-14T14:01:18.066367"
+    },
+    {
+      "id": "1182363",
+      "question": "Google (GOOGL) Up or Down on January 15?",
+      "market": "0xa4c5251e6229cedfc3e6afb972d78dcb5be5bd0fed2156330441131499753410",
+      "slug": "googl-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NASDAQ closing price for Alphabet Inc. (GOOGL) on Thursday, January 15, 2026 is higher than the official NASDAQ closing price for GOOGL on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NASDAQ closing price for Alphabet Inc. (GOOGL) on Thursday, January 15, 2026 is lower than the official NASDAQ closing price for GOOGL on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf GOOGL does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NASDAQ for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is NASDAQ, specifically the exchange-certified Close values published at https://www.nasdaq.com/market-activity/quotes/historical.",
+      "assets_ids": [
+        "11343413713695001658470966685779268794372133546831942421116692411585609762779",
+        "97064824194130926445539963334034572984299231056377891294647176106774009862289"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395678387",
+      "received_at": "2026-01-14T14:01:18.322227"
+    },
+    {
+      "id": "1182362",
+      "question": "XRP Up or Down - January 16, 8AM ET",
+      "market": "0xb6c62ee92703b5b267b02e1734025884402552147b914d33a6b3dadd87586b01",
+      "slug": "xrp-up-or-down-january-16-8am-et",
+      "description": "This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the XRP/USDT 1 hour candle that begins on the time and date specified in the title. Otherwise, this market will resolve to \"Down\".\n\nThe resolution source for this market is information from Binance, specifically the XRP/USDT pair (https://www.binance.com/en/trade/XRP_USDT). The close « C » and open « O » displayed at the top of the graph for the relevant \"1H\" candle will be used once the data for that candle is finalized.\n\nPlease note that this market is about the price according to Binance XRP/USDT, not according to other sources or spot markets.",
+      "assets_ids": [
+        "33988260141467036608864774405175352557487481528520823257032586193301123981739",
+        "108192341108683488458746641244173353880656939839471423791587588984477815185327"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395678628",
+      "received_at": "2026-01-14T14:01:18.564529"
+    },
+    {
+      "id": "1182359",
+      "question": "Crude Oil (CL) Up or Down on January 15?",
+      "market": "0xd15e29cfa6cbcc9f296befb598b7d50e53a2dfa49b095bd7fc7dc2f7784226ae",
+      "slug": "cl-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if, on Thursday, January 15, 2026, the official CME settlement price for the Active Month (front month) of Crude Oil (CL) futures is higher than the previous trading day's official settlement price for the same Active Month contract.\n\nThis market will resolve to \"Down\" if, on Thursday, January 15, 2026, the official CME settlement price for the Active Month (front month) of Crude Oil (CL) futures is lower than the previous trading day's official settlement price for the same Active Month contract.\n\nFor CME Crude Oil (CL) futures contracts, the active month is the nearest of the contract months listed. The active month becomes a non-active month effective two business days prior to the spot month expiration. For example; if the spot month expires on a Friday the next listed contract will be considered the Active Month on the Wednesday prior to the spot month expiration.\n\nOnly the Active Month's official settlement price published by CME Group will be considered. Intraday trades, highs, lows, bids, offers, midpoint values, or indicative prices do not count.\n\nNote that the settlement price may differ from the last traded price. CME's methodology to determine the settlement price can vary by commodity and contract.\n\nThis market will resolve based on the settlement price as it appears on the CME settlement page at the time it is first published for that trading day, regardless of any later corrections or updates. If CME does not publish the settlement price for the listed trading day by 11:59 PM ET of the next trading day, this market will resolve to 50-50.\n\nIf the Active Month changes between the previous trading day and Thursday, January 15, 2026, the market will continue using the same contract month used on the previous trading day for the purposes of determining whether the settlement price moved up or down.\n\nThe resolution source for this market is the CME Group website — specifically, the daily \"Settlement\" price for the Active Month of Crude Oil (CL) futures.",
+      "assets_ids": [
+        "109636815926755921976648517417863348201694498840760602044850465597502918716412",
+        "74317157323633549052884058912601387638007831796093887824535347408961016931601"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395678895",
+      "received_at": "2026-01-14T14:01:18.830302"
+    },
+    {
+      "id": "1182368",
+      "question": "Hang Seng (HSI) Up or Down on January 15?",
+      "market": "0x84e01504a0451af8ff8a3ef83edacd9776d61f3bccb332b6af83dfa5e3964505",
+      "slug": "hsi-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official Hang Seng Index closing price for Hang Seng (HSI) on Thursday, January 15, 2026 is higher than the official Hang Seng Index closing price for HSI on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official Hang Seng Index closing price for Hang Seng (HSI) on Thursday, January 15, 2026 is lower than the official Hang Seng Index closing price for HSI on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf HSI does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by Hang Seng Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+      "assets_ids": [
+        "51392771517935154172493269338662196476374202861671523232433701324169353397300",
+        "72908851321892979034273017051821310707847477594923496273447507035437317861817"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395680200",
+      "received_at": "2026-01-14T14:01:20.134422"
+    },
+    {
+      "id": "1182367",
+      "question": "Tesla (TSLA) Up or Down on January 15?",
+      "market": "0x953c8c0fb195643e13b3f1f12313ad460c7dcc17b40aa7b4720112b202ac369c",
+      "slug": "tsla-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NASDAQ closing price for Tesla, Inc. (TSLA) on Thursday, January 15, 2026 is higher than the official NASDAQ closing price for TSLA on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NASDAQ closing price for Tesla, Inc. (TSLA) on Thursday, January 15, 2026 is lower than the official NASDAQ closing price for TSLA on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf TSLA does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NASDAQ for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is NASDAQ, specifically the exchange-certified Close values published at https://www.nasdaq.com/market-activity/quotes/historical.",
+      "assets_ids": [
+        "94842018134855282316633658043371104679703627999900171530941576129594459231128",
+        "80640569552002905512474029683276129287199885091127602790230790437140935649759"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395680456",
+      "received_at": "2026-01-14T14:01:20.398151"
+    },
+    {
+      "id": "1182361",
+      "question": "Dow Jones (DJI) Up or Down on January 15?",
+      "market": "0x9850a4aa44654eff441732c6b7a183aaa55d5c2246aae3d1ea254b3e173aa170",
+      "slug": "dji-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official Dow Jones Industrial Average closing price for Dow Jones (DJI) on Thursday, January 15, 2026 is higher than the official Dow Jones Industrial Average closing price for DJI on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official Dow Jones Industrial Average closing price for Dow Jones (DJI) on Thursday, January 15, 2026 is lower than the official Dow Jones Industrial Average closing price for DJI on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf DJI does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by Dow Jones Industrial Average for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+      "assets_ids": [
+        "5831459826775583559946131480124024066034480320198612709878753281120160038198",
+        "61353678820847190509163362828342192901896811427017138479193397240704102676512"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395680741",
+      "received_at": "2026-01-14T14:01:20.674283"
+    },
+    {
+      "id": "1182364",
+      "question": "FTSE 100 (UKX) Up or Down on January 15?",
+      "market": "0xbb23e55697f92c60ba37755915f347851e43ac7851284523e158a14bb3ccf10a",
+      "slug": "ukx-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official FTSE 100 Index closing price for FTSE 100 (UKX) on Thursday, January 15, 2026 is higher than the official FTSE 100 Index closing price for UKX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official FTSE 100 Index closing price for FTSE 100 (UKX) on Thursday, January 15, 2026 is lower than the official FTSE 100 Index closing price for UKX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf UKX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by FTSE 100 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+      "assets_ids": [
+        "82692848782748124694552252696688539564145153886299916813252387881002914722097",
+        "111273496894342252223437799640169839361679019789622594750846586270891905618913"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395680971",
+      "received_at": "2026-01-14T14:01:20.911432"
+    },
+    {
+      "id": "1182365",
+      "question": "Meta (META) Up or Down on January 15?",
+      "market": "0x10e23049bc101b8c1f025b8ee2e7f8d1ee2695140cbd97b16e261d2be756e020",
+      "slug": "meta-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NASDAQ closing price for Meta Platforms, Inc. (META) on Thursday, January 15, 2026 is higher than the official NASDAQ closing price for META on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NASDAQ closing price for Meta Platforms, Inc. (META) on Thursday, January 15, 2026 is lower than the official NASDAQ closing price for META on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf META does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NASDAQ for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is NASDAQ, specifically the exchange-certified Close values published at https://www.nasdaq.com/market-activity/quotes/historical.",
+      "assets_ids": [
+        "82705576396643656330973770200457667582093760550142965217557222695937399497876",
+        "40203381524661006322112795138991482299967775845666891077850270765799491318590"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395681226",
+      "received_at": "2026-01-14T14:01:21.176004"
+    },
+    {
+      "id": "1182372",
+      "question": "NYA (NYA) Up or Down on January 15?",
+      "market": "0x0841eb24aa2bfa3105fe6a1058d9b10654d336383bf6e8ddef7b72958aa8bc7b",
+      "slug": "nya-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NYSE Composite Index closing price for NYA (NYA) on Thursday, January 15, 2026 is higher than the official NYSE Composite Index closing price for NYA on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NYSE Composite Index closing price for NYA (NYA) on Thursday, January 15, 2026 is lower than the official NYSE Composite Index closing price for NYA on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf NYA does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NYSE Composite Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+      "assets_ids": [
+        "49029556271367147682587372763655257012790057399481672941681383530405367632048",
+        "15106531152107313386811739817094164216422179625159906555052998213738028950227"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395682163",
+      "received_at": "2026-01-14T14:01:22.100851"
+    },
+    {
+      "id": "1182369",
+      "question": "NVIDIA (NVDA) Up or Down on January 15?",
+      "market": "0x7175134a11185937c9035dbcb72f233dec168f50f53b025580853ffef9667c18",
+      "slug": "nvda-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NASDAQ closing price for NVIDIA (NVDA) on Thursday, January 15, 2026 is higher than the official NASDAQ closing price for NVDA on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NASDAQ closing price for NVIDIA (NVDA) on Thursday, January 15, 2026 is lower than the official NASDAQ closing price for NVDA on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf NVDA does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NASDAQ for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is NASDAQ, specifically the exchange-certified Close values published at https://www.nasdaq.com/market-activity/quotes/historical.",
+      "assets_ids": [
+        "31392129729471010750953393368360781040861551911057229350158831167351893175704",
+        "94333037896174552871765481487647049914305956303857803012850211220454505627398"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395682416",
+      "received_at": "2026-01-14T14:01:22.390025"
+    },
+    {
+      "id": "1182371",
+      "question": "Netflix (NFLX) Up or Down on January 15?",
+      "market": "0x16314fb1a7096c6c433144ba0aca813cd73eabf4bc229309dde9252c4cad8acf",
+      "slug": "nflx-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NASDAQ closing price for Netflix, Inc. (NFLX) on Thursday, January 15, 2026 is higher than the official NASDAQ closing price for NFLX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NASDAQ closing price for Netflix, Inc. (NFLX) on Thursday, January 15, 2026 is lower than the official NASDAQ closing price for NFLX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf NFLX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NASDAQ for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is NASDAQ, specifically the exchange-certified Close values published at https://www.nasdaq.com/market-activity/quotes/historical.",
+      "assets_ids": [
+        "104069564311545023408242075226113553595294720715561878236697453178914549397948",
+        "23966680616132771061715098239393861558344650611893426248845521502718104611361"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395682672",
+      "received_at": "2026-01-14T14:01:22.620205"
+    },
+    {
+      "id": "1182370",
+      "question": "Russell 2000 (RUT) Up or Down on January 15?",
+      "market": "0x612165d3dcdcba9d18eb0744dcde55170fb3a70dc4676b4c76ccdfe226c91482",
+      "slug": "rut-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official Russell 2000 Index closing price for Russell 2000 (RUT) on Thursday, January 15, 2026 is higher than the official Russell 2000 Index closing price for RUT on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official Russell 2000 Index closing price for Russell 2000 (RUT) on Thursday, January 15, 2026 is lower than the official Russell 2000 Index closing price for RUT on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf RUT does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by Russell 2000 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+      "assets_ids": [
+        "15684284806216995147498355343332502894639075702357909264888061381043167253986",
+        "56455705477203975168299532589229650254501386648620686736760535968050344850278"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395685208",
+      "received_at": "2026-01-14T14:01:25.144496"
+    },
+    {
+      "id": "1182374",
+      "question": "Opendoor (OPEN) Up or Down on January 15?",
+      "market": "0x4b24b409d4b4b991dc01b6079d2b3c33a3a452b6918f848cc75c5c3f5aef058c",
+      "slug": "open-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NASDAQ closing price for Opendoor Technologies Inc. (OPEN) on Thursday, January 15, 2026 is higher than the official NASDAQ closing price for OPEN on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NASDAQ closing price for Opendoor Technologies Inc. (OPEN) on Thursday, January 15, 2026 is lower than the official NASDAQ closing price for OPEN on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf OPEN does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NASDAQ for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is NASDAQ, specifically the exchange-certified Close values published at https://www.nasdaq.com/market-activity/quotes/historical.",
+      "assets_ids": [
+        "79079751472965567247275617386046970229800532952473779456928091015307672591892",
+        "106742939855454156020198572318280562035415479893798347159071671680606625324478"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395685463",
+      "received_at": "2026-01-14T14:01:25.399465"
+    },
+    {
+      "id": "1182373",
+      "question": "Palantir (PLTR) Up or Down on January 15?",
+      "market": "0xf95de34e4539a196b4b1996f6b620f3f2f517eb091aee9bfdd8177620498b151",
+      "slug": "pltr-up-or-down-on-january-15-2026",
+      "description": "This market will resolve to \"Up\" if the official NASDAQ closing price for Palantir Technologies Inc. (PLTR) on Thursday, January 15, 2026 is higher than the official NASDAQ closing price for PLTR on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official NASDAQ closing price for Palantir Technologies Inc. (PLTR) on Thursday, January 15, 2026 is lower than the official NASDAQ closing price for PLTR on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf PLTR does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by NASDAQ for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is NASDAQ, specifically the exchange-certified Close values published at https://www.nasdaq.com/market-activity/quotes/historical.",
+      "assets_ids": [
+        "21373368875935279646152950949762799251295658164224871367788779855463657216989",
+        "51084915097052337678766866322705818632553061312413782210523971511046383134921"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768395685723",
+      "received_at": "2026-01-14T14:01:25.658667"
+    },
+    {
+      "id": "1182379",
+      "question": "Bitcoin Up or Down - January 15, 8:00AM-8:15AM ET",
+      "market": "0x2e14be45cac94f79c5dd390726dad6685b75313ec8a3b5f544a67ec4304ac63d",
+      "slug": "btc-updown-15m-1768482000",
+      "description": "This market will resolve to \"Up\" if the Bitcoin price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the BTC/USD data stream available at https://data.chain.link/streams/btc-usd.\nPlease note that this market is about the price according to Chainlink data stream BTC/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "102752149872759995849253548285964772710360757794510378598066929106313128198040",
+        "76147799116803627838892747205156146036637462075844261865297441074210583435070"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768396111739",
+      "received_at": "2026-01-14T14:08:31.672663"
+    },
+    {
+      "id": "1182381",
+      "question": "Solana Up or Down - January 15, 8:00AM-8:15AM ET",
+      "market": "0x44c2dd4aa0af57a820ca8ddb0c7ec6e5f31adac4712705f1513fa8d538d68ca2",
+      "slug": "sol-updown-15m-1768482000",
+      "description": "This market will resolve to \"Up\" if the Solana price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the SOL/USD data stream available at https://data.chain.link/streams/sol-usd.\nPlease note that this market is about the price according to Chainlink data stream SOL/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "24224719176342458105013450328052271364093192721625913978014053660767051541167",
+        "96637442766337762603445447617270085320834201148659922526991050145826300847599"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768396113608",
+      "received_at": "2026-01-14T14:08:33.541949"
+    },
+    {
+      "id": "1182382",
+      "question": "Ethereum Up or Down - January 15, 8:00AM-8:15AM ET",
+      "market": "0x39b0c70ab8ce24d6989d927727a4c0cb2dde1c627ab2f679fd82a0cd5c7ad2f8",
+      "slug": "eth-updown-15m-1768482000",
+      "description": "This market will resolve to \"Up\" if the Ethereum price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the ETH/USD data stream available at https://data.chain.link/streams/eth-usd.\nPlease note that this market is about the price according to Chainlink data stream ETH/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "72848020772416419886966413381803908335891671637679137479036071567008757784090",
+        "41923199199958127136080458449567138775118180944889307242915472951469800187430"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768396113865",
+      "received_at": "2026-01-14T14:08:33.796291"
+    },
+    {
+      "id": "1182380",
+      "question": "XRP Up or Down - January 15, 8:00AM-12:00PM ET",
+      "market": "0x82db569b6a654e95764bef368195ab31150e9cde2325544e80cbeb591dd1e912",
+      "slug": "xrp-updown-4h-1768482000",
+      "description": "This market will resolve to \"Up\" if the XRP price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the XRP/USD data stream available at https://data.chain.link/streams/xrp-usd.\nPlease note that this market is about the price according to Chainlink data stream XRP/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "47000341609780745909224304211055155303658968755948552611319235604968953116267",
+        "35748369473889508169282496682880284888858215941022686920980437260220655426294"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768396114124",
+      "received_at": "2026-01-14T14:08:34.056866"
+    },
+    {
+      "id": "1182386",
+      "question": "Solana Up or Down - January 15, 8:00AM-12:00PM ET",
+      "market": "0xcc429aa2fcb97f8a54f036e5b9daa573e387b44d919bea50f73c7bfe56d3b2b3",
+      "slug": "sol-updown-4h-1768482000",
+      "description": "This market will resolve to \"Up\" if the Solana price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the SOL/USD data stream available at https://data.chain.link/streams/sol-usd.\nPlease note that this market is about the price according to Chainlink data stream SOL/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "87847676882960698942122865839885743709358838431999553580180844694959008642437",
+        "82134186664207434613831955214288742179610758249947526886419103803179598536703"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768396115531",
+      "received_at": "2026-01-14T14:08:35.463316"
+    },
+    {
+      "id": "1182387",
+      "question": "Ethereum Up or Down - January 15, 8:00AM-12:00PM ET",
+      "market": "0x1f4941ec5c1fe1e751b91c55a0542d47e2ce26ffc95cc498d1330ce235690079",
+      "slug": "eth-updown-4h-1768482000",
+      "description": "This market will resolve to \"Up\" if the Ethereum price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the ETH/USD data stream available at https://data.chain.link/streams/eth-usd.\nPlease note that this market is about the price according to Chainlink data stream ETH/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "90123160779983495701724416503984288343747299732050813227784231509759074437006",
+        "49282151270438458858712384365988502214378408128300408935744288252294842554108"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768396115788",
+      "received_at": "2026-01-14T14:08:35.718907"
+    },
+    {
+      "id": "1182390",
+      "question": "XRP Up or Down - January 15, 8:00AM-8:15AM ET",
+      "market": "0xa703c513f399173c3996fc25c40b3d6c372a6f76e0d2ae326f42cb1a298687be",
+      "slug": "xrp-updown-15m-1768482000",
+      "description": "This market will resolve to \"Up\" if the XRP price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the XRP/USD data stream available at https://data.chain.link/streams/xrp-usd.\nPlease note that this market is about the price according to Chainlink data stream XRP/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "32805752887685007594660310611363122683909632912158458847859251115980705074966",
+        "42117681217312846368543594055479786237008410831514552776946864856517754867483"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768396117448",
+      "received_at": "2026-01-14T14:08:37.390147"
+    },
+    {
+      "id": "1182389",
+      "question": "Bitcoin Up or Down - January 15, 8:00AM-12:00PM ET",
+      "market": "0x207d91ce8875ccb29230e6fb80d9e79c392378cc00ed6976796bf6e066890ab1",
+      "slug": "btc-updown-4h-1768482000",
+      "description": "This market will resolve to \"Up\" if the Bitcoin price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the BTC/USD data stream available at https://data.chain.link/streams/btc-usd.\nPlease note that this market is about the price according to Chainlink data stream BTC/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "66799847475603539688637252004037331269937713821046028751356903387258875651855",
+        "78823107906808438748794872535778129272714257154032557476778626359235324659324"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768396117704",
+      "received_at": "2026-01-14T14:08:37.638871"
+    },
+    {
+      "id": "1182393",
+      "question": "Jazz vs. Bulls: O/U 243.5",
+      "market": "0x3fb05cb9730e3161b275433926aca7c965baedfcc53eb37522382d7af7d2692c",
+      "slug": "nba-uta-chi-2026-01-14-total-243pt5",
+      "description": "In the upcoming NBA game, scheduled for January 14 at 8:00 PM ET:\n\nThis market will resolve to \"Over\" if the Jazz and Bulls combine to score 244 or more points in this game.\n\nIf the combined total is less than 244, this market will resolve to \"Under\".\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, this market will resolve 50-50.",
+      "assets_ids": [
+        "50651561913568708727305038411451183275562333741970018318962509722653427879285",
+        "103618508974389960495917326099766245063227285830296454127597479473238828904098"
+      ],
+      "outcomes": [
+        "Over",
+        "Under"
+      ],
+      "timestamp": "1768396290880",
+      "received_at": "2026-01-14T14:11:30.810918"
+    },
+    {
+      "id": "1182396",
+      "question": "Knicks vs. Kings: 1H O/U 118.5",
+      "market": "0x786d964be5cc48ef51498f2f54cf8c7e01ee5aaf322fead89087547c9bdb96db",
+      "slug": "nba-nyk-sac-2026-01-14-1h-total-118pt5",
+      "description": "In the first half of the NBA game between Knicks and Kings, scheduled for January 14 at 10:00 PM ET:\n\nThis market will resolve to \"Over\" if the Knicks and Kings combine to score 119 or more points in the first half.\n\nIf the combined first half total is less than 119, this market will resolve to \"Under\".\n\nThe result will be determined based on the score at halftime only.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, this market will resolve 50-50.",
+      "assets_ids": [
+        "64343231508314500623828182514395842303673046137211593438132145706322559470468",
+        "45030031867537709072335330706228283160487496912494103119535606296704063832221"
+      ],
+      "outcomes": [
+        "Over",
+        "Under"
+      ],
+      "timestamp": "1768396293881",
+      "received_at": "2026-01-14T14:11:33.818591"
+    },
+    {
+      "id": "1182391",
+      "question": "Jazz vs. Bulls: O/U 242.5",
+      "market": "0xa47663731f6242fac5f23c288a92bf42ee4fd520eff182ccc4b965b1a43844a4",
+      "slug": "nba-uta-chi-2026-01-14-total-242pt5",
+      "description": "In the upcoming NBA game, scheduled for January 14 at 8:00 PM ET:\n\nThis market will resolve to \"Over\" if the Jazz and Bulls combine to score 243 or more points in this game.\n\nIf the combined total is less than 243, this market will resolve to \"Under\".\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, this market will resolve 50-50.",
+      "assets_ids": [
+        "26390696193615056448759472975176442574000411485882753768274022105095966715104",
+        "42378193368737854727714139877674918786182624771756685960877548591998361306307"
+      ],
+      "outcomes": [
+        "Over",
+        "Under"
+      ],
+      "timestamp": "1768396294136",
+      "received_at": "2026-01-14T14:11:34.070557"
+    },
+    {
+      "id": "1182394",
+      "question": "Nets vs. Pelicans: 1H O/U 117.5",
+      "market": "0xcd7445f2741fed50d4586462ef57021b1ac860407a6b816150593af9b5e41a93",
+      "slug": "nba-bkn-nop-2026-01-14-1h-total-117pt5",
+      "description": "In the first half of the NBA game between Nets and Pelicans, scheduled for January 14 at 8:00 PM ET:\n\nThis market will resolve to \"Over\" if the Nets and Pelicans combine to score 118 or more points in the first half.\n\nIf the combined first half total is less than 118, this market will resolve to \"Under\".\n\nThe result will be determined based on the score at halftime only.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, this market will resolve 50-50.",
+      "assets_ids": [
+        "48839606065540577978636005845896251371243444276798804454803377432651628529800",
+        "16821311957396937248476265431834664846722072496735660167663247442089948183783"
+      ],
+      "outcomes": [
+        "Over",
+        "Under"
+      ],
+      "timestamp": "1768396294390",
+      "received_at": "2026-01-14T14:11:34.320448"
+    },
+    {
+      "id": "1182395",
+      "question": "Knicks vs. Kings: O/U 229.5",
+      "market": "0xba04a8847126e2c4d55069f5677b4172a266150817a11f631251d663f960cd37",
+      "slug": "nba-nyk-sac-2026-01-14-total-229pt5",
+      "description": "In the upcoming NBA game, scheduled for January 14 at 10:00 PM ET:\n\nThis market will resolve to \"Over\" if the Knicks and Kings combine to score 230 or more points in this game.\n\nIf the combined total is less than 230, this market will resolve to \"Under\".\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, this market will resolve 50-50.",
+      "assets_ids": [
+        "47390319072087086533985462675286915974561209520295431794153563874714665913308",
+        "80832479412118947436305246678867135944255698475469045822538693830132422286954"
+      ],
+      "outcomes": [
+        "Over",
+        "Under"
+      ],
+      "timestamp": "1768396295886",
+      "received_at": "2026-01-14T14:11:35.818316"
+    },
+    {
+      "id": "1182392",
+      "question": "Jazz vs. Bulls: 1H O/U 118.5",
+      "market": "0x8f5653af0efebd1801f496174d4e6d2f70f3120dce40dbc9e14794527767d502",
+      "slug": "nba-uta-chi-2026-01-14-1h-total-118pt5",
+      "description": "In the first half of the NBA game between Jazz and Bulls, scheduled for January 14 at 8:00 PM ET:\n\nThis market will resolve to \"Over\" if the Jazz and Bulls combine to score 119 or more points in the first half.\n\nIf the combined first half total is less than 119, this market will resolve to \"Under\".\n\nThe result will be determined based on the score at halftime only.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, this market will resolve 50-50.",
+      "assets_ids": [
+        "27151117327285804599580317788006469204679839125580247105020257264760805347232",
+        "80751540176162783215061948813468722818166210447763867172425531311869002710425"
+      ],
+      "outcomes": [
+        "Over",
+        "Under"
+      ],
+      "timestamp": "1768396296141",
+      "received_at": "2026-01-14T14:11:36.070885"
+    },
+    {
+      "id": "1182397",
+      "question": "Knicks vs. Kings: O/U 230.5",
+      "market": "0x1272aa52eb877fa6970dd4a8e93e9d6f2f9473b0c8b2af7d09454613168aa11e",
+      "slug": "nba-nyk-sac-2026-01-14-total-230pt5",
+      "description": "In the upcoming NBA game, scheduled for January 14 at 10:00 PM ET:\n\nThis market will resolve to \"Over\" if the Knicks and Kings combine to score 231 or more points in this game.\n\nIf the combined total is less than 231, this market will resolve to \"Under\".\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, this market will resolve 50-50.",
+      "assets_ids": [
+        "13400330214293660958469194260093261801571130035448201692380228549690781118232",
+        "35665650369800683289959300054604543042890376865609779990759356825763839726369"
+      ],
+      "outcomes": [
+        "Over",
+        "Under"
+      ],
+      "timestamp": "1768396296396",
+      "received_at": "2026-01-14T14:11:36.334089"
+    },
+    {
+      "id": "1182456",
+      "question": "Bitcoin Up or Down - January 15, 8:15AM-8:30AM ET",
+      "market": "0xebaf0f337ff359fca15447f41c2a1d40f5272f66e5691e962e4ef51857d65300",
+      "slug": "btc-updown-15m-1768482900",
+      "description": "This market will resolve to \"Up\" if the Bitcoin price at the end of the time range specified in the title is greater than or equal to the price at the beginning of that range. Otherwise, it will resolve to \"Down\".\nThe resolution source for this market is information from Chainlink, specifically the BTC/USD data stream available at https://data.chain.link/streams/btc-usd.\nPlease note that this market is about the price according to Chainlink data stream BTC/USD, not according to other sources or spot markets.",
+      "assets_ids": [
+        "101489546265690620589932997644492266663318346057469626834892096716176197270151",
+        "13243485868939239459836309392971529273116236794263415586677431147279029847888"
+      ],
+      "outcomes": [
+        "Up",
+        "Down"
+      ],
+      "timestamp": "1768396983365",
+      "received_at": "2026-01-14T14:23:03.295645"
+    }
+  ],
+  "market_resolved": [],
+  "tick_changes": [],
+  "best_bid_ask": []
+}
