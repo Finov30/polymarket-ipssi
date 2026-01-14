@@ -1,13 +1,13 @@
 """
 Truth Social API Client
-Reverse-engineered API based on Mastodon
 """
 
+import os
+import json
+import re
 from curl_cffi import requests
 from dotenv import load_dotenv
-import os
-import re
-
+from datetime import datetime
 load_dotenv()
 
 class TruthSocialAPI:
@@ -77,33 +77,12 @@ class TruthSocialAPI:
         """Lookup user by username"""
         return self._get(f"/v1/accounts/lookup", {"acct": username})
 
-    def get_user(self, user_id: str) -> dict:
-        """Get user by ID"""
-        return self._get(f"/v1/accounts/{user_id}")
-
     def get_statuses(self, user_id: str, limit: int = 20, exclude_replies: bool = True) -> list:
         """Get user's statuses/posts"""
         params = {"limit": limit}
         if exclude_replies:
             params["exclude_replies"] = "true"
         return self._get(f"/v1/accounts/{user_id}/statuses", params)
-
-    def get_user_statuses(self, username: str, limit: int = 20) -> list:
-        """Get statuses by username (convenience method)"""
-        user = self.lookup_user(username)
-        return self.get_statuses(user["id"], limit)
-
-    def search(self, query: str, search_type: str = "statuses", limit: int = 20) -> dict:
-        """Search for users, statuses, or hashtags"""
-        return self._get("/v2/search", {"q": query, "type": search_type, "limit": limit})
-
-    def get_trending(self, limit: int = 20) -> list:
-        """Get trending posts"""
-        return self._get("/v1/trends/statuses", {"limit": limit})
-
-    def get_trending_tags(self, limit: int = 20) -> list:
-        """Get trending hashtags"""
-        return self._get("/v1/trends/tags", {"limit": limit})
 
     @staticmethod
     def clean_html(content: str) -> str:
@@ -117,3 +96,57 @@ class TruthSocialAPI:
         content = content.replace('&quot;', '"')
         content = content.replace('&nbsp;', ' ')
         return content.strip()
+
+
+def main():
+    """Ingestion autonome TruthSocial"""
+    api = TruthSocialAPI()
+    print("Authentification...")
+    api.authenticate()
+    print("OK\n")
+
+    username = "realDonaldTrump" #on prend que Trump pour l'instant, mais on peut étendre apres
+
+    print(f"Récupération de @{username}...")
+    user = api.lookup_user(username)
+    print(f"Utilisateur: {user['display_name']} (@{user['username']})")
+    print(f"Followers: {user['followers_count']:,}")
+    print(f"Posts: {user['statuses_count']:,}")
+
+    print(f"\nRécupération des 10 derniers posts...")
+    posts = api.get_statuses(user["id"], limit=100)
+
+    base_path = "data/raw/truthsocial"
+    now = datetime.now()
+    output_dir = os.path.join(
+        base_path,
+        f"date={now:%Y-%m-%d}",
+        f"hour={now:%H}"
+    )
+    os.makedirs(output_dir, exist_ok=True)
+
+    filename = f"truthsocial_{username}_{now:%Y%m%d_%H%M%S}.jsonl"
+    output_path = os.path.join(output_dir, filename)
+
+    if not posts:
+        print("[SAVE] Aucun post à sauvegarder")
+        return
+
+    with open(output_path, "a", encoding="utf-8") as f:
+        for post in posts:
+            record = {
+                "ingestion_ts": now.isoformat(),
+                "username": username,
+                "user_id": user["id"],
+                "post_id": post["id"],
+                "created_at": post["created_at"],
+                "raw": post
+            }
+            json.dump(record, f, ensure_ascii=False)
+            f.write("\n")
+
+    print(f"[SAVE] {len(posts)} posts sauvegardés → {output_path}")
+
+
+if __name__ == "__main__":
+    main()

@@ -11,7 +11,7 @@ import sys
 import urllib.request
 from datetime import datetime
 from pathlib import Path
-
+import os
 try:
     import websockets
 except ImportError:
@@ -27,32 +27,73 @@ OUTPUT_FILE = Path("polymarket_data.json")
 MAX_MARKETS = 20  # Nombre de marchés à suivre
 
 # Structure de données pour stocker les événements
-data_store = {
-    "metadata": {
-        "started_at": None,
-        "last_updated": None,
-        "total_events": 0,
-        "markets_tracked": []
-    },
-    "orderbooks": {},      # asset_id -> orderbook data
+data_store = {   
     "price_changes": [],   # Liste des changements de prix
     "trades": [],          # Liste des trades (last_trade_price)
     "new_markets": [],     # Nouveaux marchés créés
     "market_resolved": [], # Marchés résolus
     "tick_changes": [],    # Changements de tick size
-    "best_bid_ask": []     # Meilleurs bid/ask
 }
 
 # Flag pour arrêt propre
 running = True
 
+def on_message(ws, message):
+    msg = json.loads(message)
+
+    print("\n==============================")
+    print("RAW WS MESSAGE")
+    print(json.dumps(msg, indent=2)[:1500])
+    print("==============================\n")
 
 def save_data():
-    """Sauvegarde les données dans le fichier JSON"""
-    data_store["metadata"]["last_updated"] = datetime.now().isoformat()
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(data_store, f, indent=2, ensure_ascii=False)
-    print(f"[SAVE] Données sauvegardées ({data_store['metadata']['total_events']} événements)")
+    """
+    Sauvegarde RAW Polymarket : événements atomiques (append-only)
+    """
+    
+    RAW_BASE_PATH = "data/raw/polymarket"   
+    now = datetime.now()
+
+    output_dir = os.path.join(
+        "data/raw/polymarket",
+        f"date={now:%Y-%m-%d}",
+        f"hour={now:%H}"
+    )
+    os.makedirs(output_dir, exist_ok=True)
+
+    filename = f"polymarket_ws_{now:%Y%m%d_%H%M%S}.jsonl"
+    output_path = os.path.join(output_dir, filename)
+
+    event_types = {
+        "price_changes": "price_change",
+        "trades": "trade",
+        "new_markets": "new_market",
+        "market_resolved": "market_resolved",
+        "tick_changes": "tick_change"
+    }
+
+    records_written = 0
+
+    with open(output_path, "a", encoding="utf-8") as f:
+        for key, event_type in event_types.items():
+            events = data_store.get(key, [])
+            for event in events:
+                record = {
+                    "event_type": event_type,
+                    "event_ts": event.get("received_at"),
+                    "ingestion_ts": now.isoformat(),
+                    "market_id": event.get("id") or event.get("market"),
+                    "raw": event
+                }
+                json.dump(record, f, ensure_ascii=False)
+                f.write("\n")
+                records_written += 1
+
+    print(f"[SAVE] {records_written} événements RAW sauvegardés → {output_path}")
+
+    # reset buffers
+    for key in event_types.keys():
+        data_store[key] = []
 
 
 def fetch_active_markets():
@@ -66,84 +107,48 @@ def fetch_active_markets():
             markets = json.loads(response.read().decode())
 
         token_ids = []
-        market_info = []
-
         for m in markets:
             if m.get("enableOrderBook") and m.get("clobTokenIds"):
-                clob_ids = json.loads(m["clobTokenIds"])
-                token_ids.extend(clob_ids)
-                market_info.append({
-                    "question": m.get("question", ""),
-                    "slug": m.get("slug", ""),
-                    "token_ids": clob_ids
-                })
+                token_ids.extend(json.loads(m["clobTokenIds"]))
 
-        print(f"[INFO] {len(market_info)} marchés trouvés, {len(token_ids)} tokens")
-        data_store["metadata"]["markets_tracked"] = market_info
+        print(f"[INFO] {len(token_ids)} tokens suivis")
         return token_ids
 
     except Exception as e:
-        print(f"[ERROR] Impossible de récupérer les marchés: {e}")
+        print(f"[ERROR] fetch_active_markets: {e}")
         return []
 
 
 def handle_message(message: dict):
-    """Traite les messages reçus selon leur type"""
-    event_type = message.get("event_type", "unknown")
-    timestamp = datetime.now().isoformat()
+    """Traite uniquement les événements utiles (event-sourcing pur)"""
+    event_type = message.get("event_type")
+    received_at = datetime.now().isoformat()
 
-    data_store["metadata"]["total_events"] += 1
-
-    if event_type == "book":
-        # Orderbook complet
-        asset_id = message.get("asset_id", "unknown")
-        data_store["orderbooks"][asset_id] = {
-            "market": message.get("market"),
-            "bids": message.get("bids", []),
-            "asks": message.get("asks", []),
-            "timestamp": message.get("timestamp"),
-            "received_at": timestamp
-        }
-        bids_count = len(message.get("bids", []))
-        asks_count = len(message.get("asks", []))
-        print(f"[BOOK] Asset: {asset_id[:20]}... | Bids: {bids_count} | Asks: {asks_count}")
-
-    elif event_type == "price_change":
-        # Changement de prix
-        price_changes = message.get("price_changes", [])
-        for pc in price_changes:
-            entry = {
+    if event_type == "price_change":
+        for pc in message.get("price_changes", []):
+            data_store["price_changes"].append({
                 "market": message.get("market"),
                 "asset_id": pc.get("asset_id"),
                 "price": pc.get("price"),
                 "size": pc.get("size"),
                 "side": pc.get("side"),
-                "best_bid": pc.get("best_bid"),
-                "best_ask": pc.get("best_ask"),
                 "timestamp": message.get("timestamp"),
-                "received_at": timestamp
-            }
-            data_store["price_changes"].append(entry)
-            print(f"[PRICE] {pc.get('side', 'N/A'):4} | Price: {str(pc.get('price', 'N/A')):8} | Size: {pc.get('size', 'N/A')}")
+                "received_at": received_at
+            })
 
     elif event_type == "last_trade_price":
-        # Trade exécuté
-        entry = {
+        data_store["trades"].append({
             "market": message.get("market"),
             "asset_id": message.get("asset_id"),
             "price": message.get("price"),
             "size": message.get("size"),
             "side": message.get("side"),
-            "fee_rate_bps": message.get("fee_rate_bps"),
             "timestamp": message.get("timestamp"),
-            "received_at": timestamp
-        }
-        data_store["trades"].append(entry)
-        print(f"[TRADE] {message.get('side', 'N/A'):4} | Price: {str(message.get('price', 'N/A')):8} | Size: {message.get('size', 'N/A')}")
+            "received_at": received_at
+        })
 
     elif event_type == "new_market":
-        # Nouveau marché
-        entry = {
+        data_store["new_markets"].append({
             "id": message.get("id"),
             "question": message.get("question"),
             "market": message.get("market"),
@@ -152,59 +157,28 @@ def handle_message(message: dict):
             "assets_ids": message.get("assets_ids", []),
             "outcomes": message.get("outcomes", []),
             "timestamp": message.get("timestamp"),
-            "received_at": timestamp
-        }
-        data_store["new_markets"].append(entry)
-        print(f"[NEW MARKET] {message.get('question', 'N/A')[:50]}...")
+            "received_at": received_at
+        })
 
     elif event_type == "market_resolved":
-        # Marché résolu
-        entry = {
+        data_store["market_resolved"].append({
             "id": message.get("id"),
-            "question": message.get("question"),
             "market": message.get("market"),
             "winning_asset_id": message.get("winning_asset_id"),
             "winning_outcome": message.get("winning_outcome"),
             "timestamp": message.get("timestamp"),
-            "received_at": timestamp
-        }
-        data_store["market_resolved"].append(entry)
-        print(f"[RESOLVED] {message.get('question', 'N/A')[:40]}... -> {message.get('winning_outcome')}")
+            "received_at": received_at
+        })
 
     elif event_type == "tick_size_change":
-        # Changement de tick size
-        entry = {
-            "asset_id": message.get("asset_id"),
+        data_store["tick_changes"].append({
             "market": message.get("market"),
+            "asset_id": message.get("asset_id"),
             "old_tick_size": message.get("old_tick_size"),
             "new_tick_size": message.get("new_tick_size"),
             "timestamp": message.get("timestamp"),
-            "received_at": timestamp
-        }
-        data_store["tick_changes"].append(entry)
-        print(f"[TICK] {message.get('old_tick_size')} -> {message.get('new_tick_size')}")
-
-    elif event_type == "best_bid_ask":
-        # Meilleur bid/ask
-        entry = {
-            "market": message.get("market"),
-            "asset_id": message.get("asset_id"),
-            "best_bid": message.get("best_bid"),
-            "best_ask": message.get("best_ask"),
-            "spread": message.get("spread"),
-            "timestamp": message.get("timestamp"),
-            "received_at": timestamp
-        }
-        data_store["best_bid_ask"].append(entry)
-        print(f"[BID/ASK] Bid: {message.get('best_bid')} | Ask: {message.get('best_ask')} | Spread: {message.get('spread')}")
-
-    else:
-        # Message non reconnu - on l'affiche pour debug
-        print(f"[MSG] Type: {event_type} | Keys: {list(message.keys())[:5]}")
-
-    # Sauvegarde toutes les 20 événements
-    if data_store["metadata"]["total_events"] % 20 == 0:
-        save_data()
+            "received_at": received_at
+        })
 
 
 async def subscribe_to_markets(ws, token_ids):
@@ -229,7 +203,6 @@ async def connect_and_listen():
         return
 
     print(f"\n[INFO] Connexion à {WSS_URL}")
-    data_store["metadata"]["started_at"] = datetime.now().isoformat()
 
     retry_count = 0
     max_retries = 5
@@ -302,7 +275,7 @@ def signal_handler(sig, frame):
 def main():
     print("=" * 60)
     print("  POLYMARKET WEBSOCKET CLIENT")
-    print("  Récupération en temps réel: orderbook, prix, trades, marchés")
+    print("  Récupération en temps réel: prix, trades, marchés")
     print("=" * 60)
     print(f"[INFO] Les données seront sauvegardées dans: {OUTPUT_FILE}")
     print("[INFO] Appuyez sur Ctrl+C pour arrêter\n")
