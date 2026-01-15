@@ -34,7 +34,7 @@ def run_step(step):
 
     result = subprocess.run(
         step["cmd"],
-        cwd=ROOT.parent,
+        cwd=ROOT,
         capture_output=True,
         text=True
     )

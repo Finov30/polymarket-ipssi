@@ -20,11 +20,16 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "websockets"])
     import websockets
 
+# Charger les variables d'environnement depuis .env
+from dotenv import load_dotenv
+load_dotenv()
+
 # Configuration
 WSS_URL = "wss://ws-subscriptions-clob.polymarket.com/ws/market"
 GAMMA_API = "https://gamma-api.polymarket.com/markets"
 OUTPUT_FILE = Path("polymarket_data.json")
 MAX_MARKETS = 20  # Nombre de marchés à suivre
+DURATION_SECONDS = int(os.getenv("INGESTION_DURATION_SECONDS", 60))  # Durée depuis .env
 
 # Structure de données pour stocker les événements
 data_store = {   
@@ -203,6 +208,10 @@ async def connect_and_listen():
         return
 
     print(f"\n[INFO] Connexion à {WSS_URL}")
+    print(f"[INFO] Durée d'ingestion: {DURATION_SECONDS} secondes")
+
+    # Timer pour arrêt automatique
+    start_time = asyncio.get_event_loop().time()
 
     retry_count = 0
     max_retries = 5
@@ -221,8 +230,15 @@ async def connect_and_listen():
                 await subscribe_to_markets(ws, token_ids)
 
                 while running:
+                    # Vérifier si la durée est atteinte
+                    elapsed = asyncio.get_event_loop().time() - start_time
+                    if elapsed >= DURATION_SECONDS:
+                        print(f"\n[INFO] Durée de {DURATION_SECONDS}s atteinte, arrêt...")
+                        running = False
+                        break
+
                     try:
-                        message = await asyncio.wait_for(ws.recv(), timeout=120)
+                        message = await asyncio.wait_for(ws.recv(), timeout=10)
 
                         # Gérer les messages PING/PONG
                         if message == "PING":
@@ -243,7 +259,7 @@ async def connect_and_listen():
                             handle_message(data)
 
                     except asyncio.TimeoutError:
-                        print("[INFO] Pas de message depuis 120s, envoi PING...")
+                        # Timeout normal, continuer la boucle pour vérifier la durée
                         try:
                             await ws.send("PING")
                         except:
@@ -277,8 +293,8 @@ def main():
     print("  POLYMARKET WEBSOCKET CLIENT")
     print("  Récupération en temps réel: prix, trades, marchés")
     print("=" * 60)
-    print(f"[INFO] Les données seront sauvegardées dans: {OUTPUT_FILE}")
-    print("[INFO] Appuyez sur Ctrl+C pour arrêter\n")
+    print(f"[INFO] Durée configurée: {DURATION_SECONDS} secondes")
+    print("[INFO] Appuyez sur Ctrl+C pour arrêter plus tôt\n")
 
     # Gestion du signal d'arrêt
     signal.signal(signal.SIGINT, signal_handler)
