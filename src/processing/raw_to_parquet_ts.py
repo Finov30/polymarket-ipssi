@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-from datetime import datetime
 import pandas as pd
 
 # Paths
@@ -8,48 +7,43 @@ RAW_BASE = Path("data/raw/truthsocial")
 PARQUET_BASE = Path("data/parquet/truthsocial/posts")
 
 def process_raw_file(raw_file: Path):
-    with open(raw_file, "r", encoding="utf-8") as f:
-        payload = json.load(f)
-
-    user = payload.get("user", {})
-    posts = payload.get("posts", [])
-
-    if not posts:
-        print(f"[SKIP] Aucun post dans {raw_file.name}")
-        return
-
     records = []
-    ingestion_ts = datetime.now()
 
-    for post in posts:
-        media = post.get("media_attachments", [])
-        media_types = [m.get("type") for m in media if m.get("type")]
+    with open(raw_file, "r", encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
 
-        record = {
-            "post_id": post.get("id"),
-            "created_at": pd.to_datetime(post.get("created_at"), utc=True),
-            "author_id": user.get("id"),
-            "author_username": user.get("username"),
-            "content": post.get("content"),
-            "uri": post.get("uri"),
-            "replies_count": post.get("replies_count"),
-            "reblogs_count": post.get("reblogs_count"),
-            "favourites_count": post.get("favourites_count"),
-            "upvotes_count": post.get("upvotes_count"),
-            "downvotes_count": post.get("downvotes_count"),
-            "has_media": len(media) > 0,
-            "media_types": media_types,
-            "ingestion_ts": ingestion_ts,
-        }
+            payload = json.loads(line)
 
-        records.append(record)
+            raw = payload.get("raw", {})
+            media = raw.get("media_attachments", [])
+
+            record = {
+                "post_id": payload.get("post_id"),
+                "user_id": payload.get("user_id"),
+                "username": payload.get("username"),
+                "created_at": pd.to_datetime(payload.get("created_at"), utc=True),
+                "ingestion_ts": pd.to_datetime(payload.get("ingestion_ts"), utc=True),
+                "content": raw.get("content"),
+                "replies_count": raw.get("replies_count"),
+                "reblogs_count": raw.get("reblogs_count"),
+                "favourites_count": raw.get("favourites_count"),
+                "upvotes_count": raw.get("upvotes_count"),
+                "downvotes_count": raw.get("downvotes_count"),
+                "has_media": len(media) > 0,
+                "media_types": [m.get("type") for m in media if m.get("type")],
+            }
+
+            records.append(record)
+
+    if not records:
+        print(f"[SKIP] {raw_file.name} vide")
+        return
 
     df = pd.DataFrame(records)
 
-    if df.empty:
-        return
-
-    event_date = ingestion_ts.date()
+    event_date = df["ingestion_ts"].dt.date.iloc[0]
 
     output_dir = PARQUET_BASE / f"date={event_date}"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -60,7 +54,7 @@ def process_raw_file(raw_file: Path):
     print(f"[PARQUET] TruthSocial → {output_file} ({len(df)} posts)")
 
 def main():
-    raw_files = sorted(RAW_BASE.rglob("*.json"))
+    raw_files = sorted(RAW_BASE.rglob("date=*/hour=*/*.jsonl"))
 
     if not raw_files:
         print("[INFO] Aucun fichier TruthSocial RAW trouvé")

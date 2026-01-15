@@ -11,6 +11,9 @@ from datetime import datetime
 load_dotenv()
 
 class TruthSocialAPI:
+    # TRUTHSOCIAL_USERNAME=Samuel_ABID
+    # TRUTHSOCIAL_PASSWORD=Yayamu06"
+    # TRUTHSOCIAL_TOKEN="1o_bFzlfsqFYBp0RYzWgV_00oE4OUoCciTbBjiNKzzo"
     BASE_URL = "https://truthsocial.com"
     API_URL = "https://truthsocial.com/api"
     CLIENT_ID = "9X1Fdd-pxNsAgEDNi_SfhJWi8T-vLuV2WVzKIbkTCw4"
@@ -113,7 +116,7 @@ def main():
     print(f"Followers: {user['followers_count']:,}")
     print(f"Posts: {user['statuses_count']:,}")
 
-    print(f"\nRécupération des 10 derniers posts...")
+    print(f"\nRécupération des 100 derniers posts...")
     posts = api.get_statuses(user["id"], limit=100)
 
     base_path = "data/raw/truthsocial"

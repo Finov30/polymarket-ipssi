@@ -67,7 +67,7 @@ def main():
             load_parquet_to_mongo(parquet_file, event_type_dir.name)
 
    # TruthSocial 
-        for parquet_file in PARQUET_BASE_TRUTH.glob("date=*/**/*.parquet"):
+    for parquet_file in PARQUET_BASE_TRUTH.glob("date=*/**/*.parquet"):
             load_parquet_to_mongo(parquet_file, "truthsocial_posts")
 
 
