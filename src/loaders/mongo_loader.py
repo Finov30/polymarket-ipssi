@@ -66,9 +66,9 @@ def main():
         for parquet_file in event_type_dir.glob("date=*/**/*.parquet"):
             load_parquet_to_mongo(parquet_file, event_type_dir.name)
 
-    # TruthSocial (décommenter si besoin)
-    # for parquet_file in PARQUET_BASE_TRUTH.glob("date=*/**/*.parquet"):
-    #     load_parquet_to_mongo(parquet_file, "truthsocial_posts")
+   # TruthSocial 
+        for parquet_file in PARQUET_BASE_TRUTH.glob("date=*/**/*.parquet"):
+            load_parquet_to_mongo(parquet_file, "truthsocial_posts")
 
 
 if __name__ == "__main__":

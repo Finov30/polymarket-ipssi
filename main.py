@@ -1,34 +1,56 @@
 import subprocess
+import sys
 from pathlib import Path
 
-def run_polymarket_ws():
-    subprocess.run(
-        ["python", "polymarket_ws.py"],
-        check=True
+ROOT = Path(__file__).resolve().parent
+
+PIPELINE = [
+    {
+        "name": "Ingestion Polymarket WS",
+        "cmd": [sys.executable, "src/ingestion/polymarket_ws.py"],
+    },
+    {
+        "name": "Ingestion TruthSocial",
+        "cmd": [sys.executable, "src/ingestion/truthsocial_api.py"],
+    },
+    {
+        "name": "Processing Polymarket → Parquet",
+        "cmd": [sys.executable, "src/processing/raw_to_parquet_pm.py"],
+    },
+    {
+        "name": "Processing TruthSocial → Parquet",
+        "cmd": [sys.executable, "src/processing/raw_to_parquet_ts.py"],
+    },
+    {
+        "name": "Load MongoDB",
+        "cmd": [sys.executable, "src/loaders/mongo_loader.py"],
+    },
+]
+
+def run_step(step):
+    print(f"\n{'='*60}")
+    print(f"[PIPELINE] START → {step['name']}")
+    print(f"{'='*60}")
+
+    result = subprocess.run(
+        step["cmd"],
+        cwd=ROOT.parent,
+        capture_output=True,
+        text=True
     )
 
-def run_raw_to_parquet():
-    raw_files = Path("data/raw/polymarket").rglob("*.jsonl")
+    if result.returncode != 0:
+        print(result.stderr)
+        raise RuntimeError(f"❌ Étape échouée: {step['name']}")
 
-    for raw_file in raw_files:
-        subprocess.run(
-            ["python", "raw_to_parquet.py", str(raw_file)],
-            check=True
-        )
+    print(result.stdout)
+    print(f"[PIPELINE] OK → {step['name']}")
 
 def main():
-    try:
-        print("[PIPELINE] Démarrage Polymarket WS")
-        run_polymarket_ws()
+    for step in PIPELINE:
+        run_step(step)
 
-    except KeyboardInterrupt:
-        print("[PIPELINE] WS arrêté")
-
-    finally:
-        print("[PIPELINE] Conversion RAW → Parquet")
-        run_raw_to_parquet()
-
-        print("[PIPELINE] Terminé")
+    print("\n✅ PIPELINE TERMINÉE AVEC SUCCÈS")
 
 if __name__ == "__main__":
     main()
