@@ -8,7 +8,7 @@ import os
 dotenv.load_dotenv()
 
 # Config
-MONGO_URI = "mongodb://localhost:27017"
+MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 DB_NAME = "polymarket_db"
 PARQUET_BASE_POLY = Path("data/parquet/polymarket")
 PARQUET_BASE_TRUTH = Path("data/parquet/truthsocial/posts")

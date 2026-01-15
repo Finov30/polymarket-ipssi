@@ -1,0 +1,40 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv
+venv/
+ENV/
+env/
+.eggs
+*.egg-info/
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data (monté en volume)
+data/
+
+# Environnement (passé via docker-compose)
+.env
+.env.*
+
+# Divers
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+LICENSE
