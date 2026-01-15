@@ -11,7 +11,7 @@ dotenv.load_dotenv()
 MONGO_URI = "mongodb://localhost:27017"
 DB_NAME = "polymarket_db"
 PARQUET_BASE_POLY = Path("data/parquet/polymarket")
-PARQUET_BASE_TRUTH = Path("data/parquet/truthsocial")
+PARQUET_BASE_TRUTH = Path("data/parquet/truthsocial/posts")
 BATCH_SIZE = 1000  # taille des inserts en batch pour éviter surcharge mémoire
 
 
@@ -68,7 +68,7 @@ def main():
 
    # TruthSocial 
     for parquet_file in PARQUET_BASE_TRUTH.glob("date=*/**/*.parquet"):
-            load_parquet_to_mongo(parquet_file, "truthsocial_posts")
+        load_parquet_to_mongo(parquet_file, "truthsocial_posts")    
 
 
 if __name__ == "__main__":
