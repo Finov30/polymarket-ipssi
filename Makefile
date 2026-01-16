@@ -1,7 +1,7 @@
 # Makefile pour le projet Polymarket Pipeline
 # ============================================
 
-.PHONY: help build up down run logs clean shell mongo-shell status restart ingestion processing load
+.PHONY: help build up down run logs clean shell mongo-shell status restart ingestion processing load streamlit streamlit-logs
 
 # Couleurs pour les messages
 BLUE := \033[34m
@@ -33,10 +33,12 @@ help:
 	@echo "  make ingestion    - Lance uniquement l'ingestion (étapes 1-2)"
 	@echo "  make processing   - Lance uniquement le processing (étapes 3-4)"
 	@echo "  make load         - Lance uniquement le chargement MongoDB (étape 5)"
+	@echo "  make streamlit    - Lance le dashboard Streamlit (port 8501)"
 	@echo ""
 	@echo "$(GREEN)Debug et monitoring:$(NC)"
 	@echo "  make logs         - Affiche les logs de la pipeline"
 	@echo "  make logs-mongo   - Affiche les logs de MongoDB"
+	@echo "  make logs-streamlit - Affiche les logs de Streamlit"
 	@echo "  make shell        - Ouvre un shell dans le container pipeline"
 	@echo "  make mongo-shell  - Ouvre un shell MongoDB"
 	@echo ""
@@ -100,6 +102,11 @@ load:
 	$(COMPOSE) run --rm pipeline src/loaders/mongo_loader.py
 	@echo "$(GREEN)[OK]$(NC) Chargement terminé"
 
+streamlit:
+	@echo "$(BLUE)[STREAMLIT]$(NC) Lancement du dashboard Streamlit..."
+	$(COMPOSE) up -d streamlit
+	@echo "$(GREEN)[OK]$(NC) Streamlit accessible sur http://localhost:8501"
+
 # ============================================
 # Debug et monitoring
 # ============================================
@@ -109,6 +116,9 @@ logs:
 
 logs-mongo:
 	$(COMPOSE) logs -f mongodb
+
+logs-streamlit:
+	$(COMPOSE) logs -f streamlit
 
 shell:
 	@echo "$(BLUE)[SHELL]$(NC) Ouverture du shell dans le container pipeline..."

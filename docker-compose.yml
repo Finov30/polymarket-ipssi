@@ -19,12 +19,13 @@ services:
     networks:
       - polymarket-network
 
-  # Pipeline de données
+  # Pipeline de données (mode continu)
   pipeline:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: polymarket-pipeline
+    restart: unless-stopped
     depends_on:
       mongodb:
         condition: service_healthy
@@ -32,12 +33,39 @@ services:
       - .env
     environment:
       - MONGO_URI=mongodb://mongodb:27017
+      - PIPELINE_CONTINUOUS=true
+      - PIPELINE_INTERVAL_SECONDS=300
     volumes:
       - ./data:/app/data
+      - ./src:/app/src
+      - ./main.py:/app/main.py
     networks:
       - polymarket-network
-    stdin_open: true
-    tty: true
+
+  # Dashboard Streamlit
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: polymarket-streamlit
+    restart: unless-stopped
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017
+      - MONGO_DB=polymarket_db
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src
+    networks:
+      - polymarket-network
+    entrypoint: ["uv", "run", "streamlit", "run", "src/app/streamlit_app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    command: []
 
 volumes:
   mongodb_data:
