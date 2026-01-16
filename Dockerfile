@@ -23,6 +23,7 @@ RUN uv sync --frozen --no-install-project
 
 # Copier le code source
 COPY src/ ./src/
+COPY app/ ./app/
 COPY main.py ./
 
 # Installer le projet

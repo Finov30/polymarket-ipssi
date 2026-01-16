@@ -61,10 +61,10 @@ services:
       - "8501:8501"
     volumes:
       - ./data:/app/data
-      - ./src:/app/src
+      - ./app:/app/app
     networks:
       - polymarket-network
-    entrypoint: ["uv", "run", "streamlit", "run", "src/app/streamlit_app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    entrypoint: ["uv", "run", "streamlit", "run", "app/streamlit_app.py", "--server.address=0.0.0.0", "--server.port=8501"]
     command: []
 
 volumes:

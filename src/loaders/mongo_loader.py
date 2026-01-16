@@ -127,12 +127,18 @@ def main():
     for event_type_dir in PARQUET_BASE_POLY.iterdir():
         if not event_type_dir.is_dir():
             continue
-        for parquet_file in event_type_dir.glob("date=*/**/*.parquet"):
+        for parquet_file in list(event_type_dir.glob("date=*/**/*.parquet")):
             load_parquet_to_mongo(parquet_file, event_type_dir.name)
+            # Supprimer le fichier après chargement réussi
+            parquet_file.unlink()
+            print(f"[CLEANUP] Fichier supprimé: {parquet_file}")
 
-   # TruthSocial 
-    for parquet_file in PARQUET_BASE_TRUTH.glob("date=*/**/*.parquet"):
-        load_parquet_to_mongo(parquet_file, "truthsocial_posts")    
+    # TruthSocial
+    for parquet_file in list(PARQUET_BASE_TRUTH.glob("date=*/**/*.parquet")):
+        load_parquet_to_mongo(parquet_file, "truthsocial_posts")
+        # Supprimer le fichier après chargement réussi
+        parquet_file.unlink()
+        print(f"[CLEANUP] Fichier supprimé: {parquet_file}")
 
 
 if __name__ == "__main__":
